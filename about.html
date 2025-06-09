@@ -3,20 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>關於本站</title>
+  <title>烏龜百科首頁</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
     body {
       opacity: 0;
       transition: opacity 1s ease-in-out;
+      background-color: #e6f2e6;
+      font-family: "Segoe UI", sans-serif;
+      color: #2f4f2f;
     }
-    .container {
+    .main {
       max-width: 800px;
       margin: 0 auto;
       padding: 20px;
-    }
-    h1 {
       text-align: center;
+      background-color: #ffffffd9;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    nav {
+      margin-top: 20px;
     }
     nav a {
       margin: 0 10px;
@@ -27,6 +34,9 @@
     nav a:hover {
       text-decoration: underline;
     }
+    h1 {
+      color: #215c3d;
+    }
   </style>
 </head>
 <body>
@@ -36,16 +46,19 @@
     });
   </script>
 
-  <div class="container">
-    <h1>關於烏龜百科</h1>
-    <p>本網站是期末專題作品之一，旨在介紹各種有趣又可愛的烏龜。從生活習性、外型特徵到保育現況，我們希望透過這個網站讓更多人認識這些古老而迷人的生物。</p>
-    <p>資料參考自 <a href="https://zh.wikipedia.org/zh-tw/%E9%BE%9C%E9%B1%89%E7%9B%AE" target="_blank">維基百科：龜鱉目</a>，內容經簡化與重新撰寫，適合一般大眾閱讀。</p>
+  <div class="main">
+    <h1>歡迎來到烏龜百科！</h1>
+    <p>這裡是屬於所有烏龜迷的天地 🐢✨</p>
+    <p>不論是紅耳龜、象龜還是海龜，我們都為你整理了詳盡資料，帶你一窺龜殼下的奇妙世界！</p>
 
     <nav>
       <a href="index.html">首頁</a> |
       <a href="about.html">關於本站</a> |
       <a href="gallery.html">烏龜圖鑑</a>
     </nav>
+
+    <img src="images/red_eared_slider.jpg" alt="紅耳龜" style="max-width: 100%; margin-top: 20px; border-radius: 10px;">
   </div>
 </body>
 </html>
+
