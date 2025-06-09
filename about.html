@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>關於本站</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #2a7e5d;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.style.opacity = 1;
+    });
+  </script>
+
+  <div class="container">
+    <h1>關於烏龜百科</h1>
+    <p>本網站是期末專題作品之一，旨在介紹各種有趣又可愛的烏龜。從生活習性、外型特徵到保育現況，我們希望透過這個網站讓更多人認識這些古老而迷人的生物。</p>
+    <p>資料參考自 <a href="https://zh.wikipedia.org/zh-tw/%E9%BE%9C%E9%B1%89%E7%9B%AE" target="_blank">維基百科：龜鱉目</a>，內容經簡化與重新撰寫，適合一般大眾閱讀。</p>
+    <p>本專題由傲嬌小組傾力打造（才不是因為喜歡烏龜才選的呢！）🐢💢</p>
+
+    <nav>
+      <a href="index.html">首頁</a> |
+      <a href="about.html">關於本站</a> |
+      <a href="gallery.html">烏龜圖鑑</a>
+    </nav>
+  </div>
+</body>
+</html>
