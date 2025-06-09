@@ -1,44 +1,88 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>圖片集</title>
-  <link rel="stylesheet" href="css/style.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>烏龜圖鑑</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .turtle-card {
+      margin: 20px;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      text-align: center;
+      background-color: #f9f9f9;
+      position: relative;
+    }
+    .turtle-card img {
+      max-width: 100%;
+      height: auto;
+    }
+    .description {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .description.show {
+      display: block;
+      opacity: 1;
+    }
+    #turtle-cursor {
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.1s linear;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>圖片集</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">首頁</a></li>
-        <li><a href="about.html">物種介紹</a></li>
-        <li><a href="gallery.html">圖片集</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section class="gallery">
-      <figure>
-        <img src="galapagos.jpg" alt="加拉巴戈斯象龜" />
-        <figcaption>加拉巴戈斯象龜｜世界最大的陸龜之一，壽命可達百年以上。</figcaption>
-      </figure>
-      <figure>
-        <img src="red_eared_slider.jpg" alt="巴西龜" />
-        <figcaption>巴西龜（紅耳龜）｜常見的淡水龜，具有紅色條紋。</figcaption>
-      </figure>
-      <figure>
-        <img src="leatherback.jpg" alt="革龜" />
-        <figcaption>革龜｜世界體型最大的海龜，外殼呈皮革狀。</figcaption>
-      </figure>
-      <figure>
-        <img src="sulcata.jpg" alt="蘇卡達象龜" />
-        <figcaption>蘇卡達象龜｜非洲大型陸龜，常作為寵物飼養。</figcaption>
-      </figure>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 烏龜百科｜圖片與資料參考自維基百科</p>
-  </footer>
+  <h1 style="text-align: center;">烏龜百科圖鑑</h1>
+
+  <div class="turtle-card">
+    <img src="images/red_eared_slider.jpg" alt="紅耳龜">
+    <h3>紅耳龜</h3>
+    <button onclick="toggleDescription('desc1')">顯示 / 隱藏介紹</button>
+    <p id="desc1" class="description">紅耳龜是一種常見的寵物龜，原產於美國，因為耳朵附近有紅色條紋而得名。</p>
+  </div>
+
+  <div class="turtle-card">
+    <img src="images/galapagos.jpg" alt="加拉巴哥象龜">
+    <h3>加拉巴哥象龜</h3>
+    <button onclick="toggleDescription('desc2')">顯示 / 隱藏介紹</button>
+    <p id="desc2" class="description">加拉巴哥象龜是世界上體型最大的陸龜，壽命可超過 100 年，為瀕危物種。</p>
+  </div>
+
+  <div class="turtle-card">
+    <img src="images/leatherback.jpg" alt="革龜">
+    <h3>革龜</h3>
+    <button onclick="toggleDescription('desc3')">顯示 / 隱藏介紹</button>
+    <p id="desc3" class="description">革龜是目前體型最大的海龜，沒有硬殼，而是柔軟革質的背部。</p>
+  </div>
+
+  <div class="turtle-card">
+    <img src="images/sulcata.jpg" alt="蘇卡達象龜">
+    <h3>蘇卡達象龜</h3>
+    <button onclick="toggleDescription('desc4')">顯示 / 隱藏介紹</button>
+    <p id="desc4" class="description">蘇卡達象龜是非洲陸龜，個性溫馴，是目前飼養率較高的大型陸龜之一。</p>
+  </div>
+
+  <img src="images/turtle_cursor.png" id="turtle-cursor" alt="小烏龜">
+
+  <script src="js/script.js"></script>
+  <script>
+    function toggleDescription(id) {
+      const desc = document.getElementById(id);
+      desc.classList.toggle("show");
+    }
+
+    const cursor = document.getElementById("turtle-cursor");
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+  </script>
 </body>
 </html>
+
